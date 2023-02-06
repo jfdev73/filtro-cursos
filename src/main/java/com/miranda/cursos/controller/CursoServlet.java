@@ -26,7 +26,9 @@ public class CursoServlet extends HttpServlet {
 
         request.setAttribute("cursos", cursos);
         request.setAttribute("titulo", "Listado de Cursos");
-   
+		/*
+		 * boolean bandera = false; request.setAttribute("bandera", bandera);
+		 */
         request.getRequestDispatcher("/listar.jsp").forward(request, response);
 	}
 

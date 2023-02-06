@@ -48,7 +48,7 @@ public class CursoRepository {
 	}
 	
 	public List<Curso> getAllFind(String busqueda) throws SQLException {
-		sql = "SELECT * FROM curso as c WHERE LOWER(c.nombre) LIKE LOWER(?);";
+		sql = "SELECT * FROM curso as c WHERE LOWER(UNACCENT(c.nombre)) LIKE LOWER(UNACCENT(?))";
 		List<Curso> cursos = new LinkedList<>();
 		try (PreparedStatement ps = conn.prepareStatement(sql);
 				

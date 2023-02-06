@@ -27,9 +27,13 @@ public class BuscarServlet extends HttpServlet {
 		 * System.out.println("Busqueda -> "+busqueda);
 		 * cursos.forEach(System.out::println);
 		 */
+        
         request.setAttribute("cursos", cursos);
         request.setAttribute("titulo", "Filtro de Cursos");
+        boolean bandera = true;
+        request.setAttribute("bandera", bandera);
         request.getRequestDispatcher("/listar.jsp").forward(request, response);
+        
 	}
 
 }

@@ -4,6 +4,7 @@
 <%
 List<Curso> cursos = (List<Curso>) request.getAttribute("cursos");
 String titulo = (String) request.getAttribute("titulo");
+Object  bandera = request.getAttribute("bandera");
 %>
 <!DOCTYPE html>
 <html>
@@ -49,5 +50,14 @@ String titulo = (String) request.getAttribute("titulo");
 		}
 		%>
 	</table>
+	
+	<% if(bandera !=null) {%>
+	<br><br><br>
+	<div>
+	<a href="<%=request.getContextPath()%>/cursos">Volver</a>
+	</div>
+	<%} %>
+	
+	
 </body>
 </html>
